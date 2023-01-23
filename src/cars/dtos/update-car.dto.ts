@@ -8,7 +8,7 @@ export class UpdateCarDto {
 
   @IsString({ message: 'Make is required and must be a string.' })
   @IsOptional()
-  readonly make?: string;
+  readonly brand?: string;
 
   @IsString({ message: 'Model is required and must be a string.' })
   @MinLength(2, { message: 'Model must be at least 2 characters long.' })
