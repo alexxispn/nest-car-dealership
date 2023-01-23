@@ -6,11 +6,7 @@ import { findIndexById } from '../helpers/find-index-by-id';
 
 @Injectable()
 export class CarsService {
-  private cars: Car[] = [
-    { id: uuid(), brand: 'Ford', model: 'Fusion Hybrid' },
-    { id: uuid(), brand: 'Tesla', model: 'Model S' },
-    { id: uuid(), brand: 'Toyota', model: 'Prius' },
-  ];
+  private cars: Car[] = [];
 
   findAll(): Car[] {
     return this.cars;
@@ -38,5 +34,9 @@ export class CarsService {
     const deleted = this.cars[index];
     this.cars.splice(index, 1);
     return { deleted };
+  }
+
+  fillWithSeed(carsSeed: Car[]): void {
+    this.cars = carsSeed;
   }
 }
